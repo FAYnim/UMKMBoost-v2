@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - UMKM AI Content</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+                    <span class="logo-text">UMKM AI Content</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <div class="nav-icon"><i class="fas fa-chart-pie"></i></div>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-lightbulb"></i></div>
+                    <span>Ide Konten</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-edit"></i></div>
+                    <span>Caption</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-cog"></i></div>
+                    <span>Pengaturan</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="content-header">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Cari konten...">
+                    <div class="search-icon"><i class="fas fa-search"></i></div>
+                </div>
+                <button class="btn btn-primary generate-btn">Hasilkan Ide Baru</button>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-container">
+                <div class="stat-card card">
+                    <div class="stat-header">
+                        <h3>Total Ide Konten</h3>
+                    </div>
+                    <div class="stat-number">1,250</div>
+                </div>
+                
+                <div class="stat-card card">
+                    <div class="stat-header">
+                        <h3>Total Keterangan Dihasilkan</h3>
+                    </div>
+                    <div class="stat-number">875</div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Latest Content -->
+            <div class="content-grid">
+                <!-- Recent Activity -->
+                <div class="activity-section card">
+                    <h3 class="section-title">Aktivitas Terkini</h3>
+                    <div class="chart-container">
+                        <div class="mini-chart">
+                            <svg width="200" height="80" viewBox="0 0 200 80">
+                                <polyline 
+                                    fill="none" 
+                                    stroke="#10b981" 
+                                    stroke-width="2"
+                                    points="10,60 30,45 50,50 70,35 90,40 110,25 130,30 150,20 170,25 190,15"
+                                />
+                                <circle cx="10" cy="60" r="3" fill="#10b981"/>
+                                <circle cx="30" cy="45" r="3" fill="#10b981"/>
+                                <circle cx="50" cy="50" r="3" fill="#10b981"/>
+                                <circle cx="70" cy="35" r="3" fill="#10b981"/>
+                                <circle cx="90" cy="40" r="3" fill="#10b981"/>
+                                <circle cx="110" cy="25" r="3" fill="#10b981"/>
+                                <circle cx="130" cy="30" r="3" fill="#10b981"/>
+                                <circle cx="150" cy="20" r="3" fill="#10b981"/>
+                                <circle cx="170" cy="25" r="3" fill="#10b981"/>
+                                <circle cx="190" cy="15" r="3" fill="#10b981"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Generated Content -->
+                <div class="latest-content card">
+                    <h3 class="section-title">Konten Terhasilkan Terkini</h3>
+                    <div class="content-list">
+                        <div class="content-item">
+                            <div class="content-icon"><i class="fab fa-instagram"></i></div>
+                            <div class="content-info">
+                                <div class="content-title">Postingan Instagram - Promosi Kedai Kopi</div>
+                                <div class="content-subtitle">Produk</div>
+                            </div>
+                            <div class="content-status">●</div>
+                        </div>
+                        
+                        <div class="content-item">
+                            <div class="content-icon"><i class="fas fa-blog"></i></div>
+                            <div class="content-info">
+                                <div class="content-title">Ide Postingan Blog - Produk Ramah Lingkungan</div>
+                                <div class="content-subtitle">Blog</div>
+                            </div>
+                            <div class="content-status">●</div>
+                        </div>
+                        
+                        <div class="content-item">
+                            <div class="content-icon"><i class="fas fa-video"></i></div>
+                            <div class="content-info">
+                                <div class="content-title">Skrip Video - Tutorial Produk</div>
+                                <div class="content-subtitle">Video</div>
+                            </div>
+                            <div class="content-status">●</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
