@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ide Konten - UMKM AI Content</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/dashboard.css">
+    <link rel="stylesheet" href="src/css/content-ideas.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+                    <span class="logo-text">UMKM AI Content</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-chart-pie"></i></div>
+                    <span>Dashboard</span>
+                </a>
+                <a href="product.html" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-box"></i></div>
+                    <span>Products</span>
+                </a>
+                <a href="content-ideas.html" class="nav-item active">
+                    <div class="nav-icon"><i class="fas fa-lightbulb"></i></div>
+                    <span>Ide Konten</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-edit"></i></div>
+                    <span>Caption</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-cog"></i></div>
+                    <span>Pengaturan</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="content-header">
+                <h1 class="page-title">Ide Konten</h1>
+                <div class="filter-container">
+                    <select class="filter-select" id="platformFilter">
+                        <option value="all">Semua Platform</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="youtube">Youtube</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="whatsapp">Status Whatsapp</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="twitter">Twitter</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Form Generate Ide -->
+            <div class="generate-idea-form card">
+                <h2 class="form-title">Generate Ide Konten Baru</h2>
+                <form id="ideaForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="product">Product</label>
+                            <select id="product" name="product" required>
+                                <option value="">Pilih Product</option>
+                                <option value="product1">Direct Srill Name</option>
+                                <option value="product2">Produts Name</option>
+                                <option value="product3">Savew Ulther James</option>
+                                <option value="product4">Stires Und Names</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="businessType">Jenis Usaha</label>
+                            <input type="text" id="businessType" name="businessType" placeholder="Contoh: Kuliner, Fashion, Teknologi" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contentPurpose">Tujuan Konten</label>
+                        <textarea id="contentPurpose" name="contentPurpose" rows="3" placeholder="Contoh: Promosi produk baru, edukasi pelanggan, meningkatkan engagement" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Platform</label>
+                        <div class="platform-options">
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="instagram">
+                                <div class="platform-card">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="youtube">
+                                <div class="platform-card">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>Youtube</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="tiktok">
+                                <div class="platform-card">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span>TikTok</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="whatsapp">
+                                <div class="platform-card">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>Whatsapp</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="facebook">
+                                <div class="platform-card">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Facebook</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="twitter">
+                                <div class="platform-card">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>Twitter</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary generate-idea-btn">
+                            <i class="fas fa-magic"></i> Generate Ide
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Content Ideas Grid -->
+            <div class="content-ideas-section">
+                <h2 class="section-title">Ide Konten Anda</h2>
+                <div class="ideas-grid" id="ideasGrid">
+                    <!-- Idea Card 1 -->
+                    <div class="idea-card card" data-platform="instagram">
+                        <div class="idea-header">
+                            <div class="idea-platform">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </div>
+                            <div class="idea-date">20 Des 2023</div>
+                        </div>
+                        <h3 class="idea-title">Promosi Kedai Kopi Musim Dingin</h3>
+                        <p class="idea-description">Ide konten untuk mempromosikan menu spesial musim dingin di kedai kopi Anda dengan konsep yang hangat dan nyaman.</p>
+                        <div class="idea-actions">
+                            <button class="btn btn-sm btn-secondary">Lihat Detail</button>
+                            <button class="btn btn-sm btn-primary">Gunakan</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Idea Card 2 -->
+                    <div class="idea-card card" data-platform="youtube">
+                        <div class="idea-header">
+                            <div class="idea-platform">
+                                <i class="fab fa-youtube"></i>
+                                <span>Youtube</span>
+                            </div>
+                            <div class="idea-date">18 Des 2023</div>
+                        </div>
+                        <h3 class="idea-title">Tutorial Penggunaan Produk</h3>
+                        <p class="idea-description">Video tutorial yang menjelaskan cara penggunaan produk Anda dengan detail dan mudah dipahami oleh pelanggan.</p>
+                        <div class="idea-actions">
+                            <button class="btn btn-sm btn-secondary">Lihat Detail</button>
+                            <button class="btn btn-sm btn-primary">Gunakan</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Idea Card 3 -->
+                    <div class="idea-card card" data-platform="tiktok">
+                        <div class="idea-header">
+                            <div class="idea-platform">
+                                <i class="fab fa-tiktok"></i>
+                                <span>TikTok</span>
+                            </div>
+                            <div class="idea-date">15 Des 2023</div>
+                        </div>
+                        <h3 class="idea-title">Challenge Viral Produk</h3>
+                        <p class="idea-description">Membuat challenge viral yang melibatkan produk Anda dan mendorong pengguna untuk berpartisipasi.</p>
+                        <div class="idea-actions">
+                            <button class="btn btn-sm btn-secondary">Lihat Detail</button>
+                            <button class="btn btn-sm btn-primary">Gunakan</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Idea Card 4 -->
+                    <div class="idea-card card" data-platform="whatsapp">
+                        <div class="idea-header">
+                            <div class="idea-platform">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Whatsapp</span>
+                            </div>
+                            <div class="idea-date">12 Des 2023</div>
+                        </div>
+                        <h3 class="idea-title">Status Promo Akhir Tahun</h3>
+                        <p class="idea-description">Desain status Whatsapp untuk promosi akhir tahun dengan diskon menarik untuk pelanggan setia.</p>
+                        <div class="idea-actions">
+                            <button class="btn btn-sm btn-secondary">Lihat Detail</button>
+                            <button class="btn btn-sm btn-primary">Gunakan</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Idea Card 5 -->
+                    <div class="idea-card card" data-platform="facebook">
+                        <div class="idea-header">
+                            <div class="idea-platform">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </div>
+                            <div class="idea-date">10 Des 2023</div>
+                        </div>
+                        <h3 class="idea-title">Kisah Sukses Pelanggan</h3>
+                        <p class="idea-description">Membagikan kisah sukses pelanggan yang telah menggunakan produk Anda dan merasakan manfaatnya.</p>
+                        <div class="idea-actions">
+                            <button class="btn btn-sm btn-secondary">Lihat Detail</button>
+                            <button class="btn btn-sm btn-primary">Gunakan</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Idea Card 6 -->
+                    <div class="idea-card card" data-platform="twitter">
+                        <div class="idea-header">
+                            <div class="idea-platform">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </div>
+                            <div class="idea-date">8 Des 2023</div>
+                        </div>
+                        <h3 class="idea-title">Tips Harian Penggunaan Produk</h3>
+                        <p class="idea-description">Thread tips harian tentang cara penggunaan produk yang efektif dan bermanfaat bagi pengikut.</p>
+                        <div class="idea-actions">
+                            <button class="btn btn-sm btn-secondary">Lihat Detail</button>
+                            <button class="btn btn-sm btn-primary">Gunakan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/content-ideas.js"></script>
+</body>
+</html>
