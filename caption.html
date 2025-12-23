@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caption Generator - UMKM AI Content</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/caption.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+                    <span class="logo-text">UMKM AI Content</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-chart-pie"></i></div>
+                    <span>Dashboard</span>
+                </a>
+                <a href="product.html" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-box"></i></div>
+                    <span>Products</span>
+                </a>
+                <a href="content-ideas.html" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-lightbulb"></i></div>
+                    <span>Ide Konten</span>
+                </a>
+                <a href="caption.html" class="nav-item active">
+                    <div class="nav-icon"><i class="fas fa-edit"></i></div>
+                    <span>Caption</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-cog"></i></div>
+                    <span>Pengaturan</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="content-header">
+                <h1 class="page-title">Caption Generator</h1>
+                <div class="filter-container">
+                    <select class="filter-select" id="platformFilter">
+                        <option value="all">Semua Platform</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="youtube">Youtube</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="whatsapp">Status Whatsapp</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="twitter">Twitter</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Form Generate Caption -->
+            <div class="generate-form card">
+                <h2 class="form-title">Generate Caption Baru</h2>
+                <form id="captionForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="product">Product</label>
+                            <select id="product" name="product" required>
+                                <option value="">Pilih Product</option>
+                                <option value="product1">Direct Srill Name</option>
+                                <option value="product2">Produts Name</option>
+                                <option value="product3">Savew Ulther James</option>
+                                <option value="product4">Stires Und Names</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="captionType">Jenis Caption</label>
+                            <select id="captionType" name="captionType" required>
+                                <option value="">Pilih Jenis</option>
+                                <option value="promosi">Promosi</option>
+                                <option value="edukasi">Edukasi</option>
+                                <option value="engagement">Engagement</option>
+                                <option value="storytelling">Storytelling</option>
+                                <option value="tips">Tips & Trik</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="keywords">Keywords/Topik</label>
+                        <input type="text" id="keywords" name="keywords" placeholder="Contoh: diskon, murah, promo, kualitas" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Platform</label>
+                        <div class="platform-options">
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="instagram">
+                                <div class="platform-card">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="youtube">
+                                <div class="platform-card">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>Youtube</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="tiktok">
+                                <div class="platform-card">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span>TikTok</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="whatsapp">
+                                <div class="platform-card">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="facebook">
+                                <div class="platform-card">
+                                    <i class="fab fa-facebook"></i>
+                                    <span>Facebook</span>
+                                </div>
+                            </label>
+                            <label class="platform-option">
+                                <input type="checkbox" name="platform" value="twitter">
+                                <div class="platform-card">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>Twitter</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="generate-btn">
+                        <i class="fas fa-magic"></i>
+                        Generate Caption
+                    </button>
+                </form>
+            </div>
+
+            <!-- Hasil Generate Caption -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h2 class="section-title">Hasil Caption</h2>
+                <div class="caption-options" id="captionOptions">
+                    <!-- Caption options akan di-generate di sini -->
+                </div>
+            </div>
+
+            <!-- Search dan Filter -->
+            <div class="search-section card" id="searchSection" style="display: none;">
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Cari caption...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="instagram">Instagram</button>
+                    <button class="filter-btn" data-filter="youtube">YouTube</button>
+                    <button class="filter-btn" data-filter="tiktok">TikTok</button>
+                    <button class="filter-btn" data-filter="whatsapp">WhatsApp</button>
+                    <button class="filter-btn" data-filter="facebook">Facebook</button>
+                    <button class="filter-btn" data-filter="twitter">Twitter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="src/js/utils.js"></script>
+    <script src="src/js/caption.js"></script>
+</body>
+</html>
